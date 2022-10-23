@@ -1,4 +1,4 @@
-# real_app
+# Expense Planner
 
 A new Flutter project.
 
