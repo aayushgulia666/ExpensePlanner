@@ -31,16 +31,43 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expense Tracker'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Card(
             child: Container(
               child: Text('CHART!'),
               width: double.infinity,
-              height: 150,
+              height: 20,
             ),
-            color: Colors.green,
+            color: Colors.lightBlue,
+          ),
+          Column(
+            children: [
+              Container(
+                  //margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10),
+                  child: Card(
+                    elevation: 5,
+                    child: Column(
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(labelText: 'Title'),
+                        ),
+                        TextField(
+                          decoration: InputDecoration(labelText: 'Amount'),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          child: Text('Add Transaction'),
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.green),
+                        )
+                      ],
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                    ),
+                  ))
+            ],
           ),
           Column(
             children: transactions.map((tx) {
@@ -74,7 +101,7 @@ class MyHomePage extends StatelessWidget {
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        DateFormat('yyyy/mm/dd').format(tx.date),
+                        DateFormat.yMMMd().format(tx.date),
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.grey),
                       ),
