@@ -23,6 +23,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Card(
             child: Container(
