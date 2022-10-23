@@ -22,8 +22,8 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expense Tracker'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Card(
             child: Container(
@@ -34,7 +34,11 @@ class MyHomePage extends StatelessWidget {
             color: Colors.green,
           ),
           Card(
-            child: Text('List of TXN\'s'),
+            child: Container(
+              child: Text('List of TXN\'s'),
+              width: double.infinity,
+              height: 150,
+            ),
           )
         ],
       ),
