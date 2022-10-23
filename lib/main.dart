@@ -74,7 +74,7 @@ class MyHomePage extends StatelessWidget {
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        DateFormat().format(tx.date),
+                        DateFormat('yyyy/mm/dd').format(tx.date),
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.grey),
                       ),
