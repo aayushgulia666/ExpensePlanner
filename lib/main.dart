@@ -22,6 +22,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expense Tracker'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Card(
             child: Container(
