@@ -17,8 +17,11 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
-  String inputTitle = "";
-  String inputAmount = "";
+  // String inputTitle = "";
+  // String inputAmount = "";
+
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   final List<Transaction> transactions = [
     Transaction(
@@ -57,22 +60,16 @@ class MyHomePage extends StatelessWidget {
                       children: [
                         TextField(
                           decoration: InputDecoration(labelText: 'Title'),
-                          onChanged: ((value) {
-                            inputTitle = value;
-                            //print(inputTitle);
-                          }),
+                          controller: titleController,
                         ),
                         TextField(
                           decoration: InputDecoration(labelText: 'Amount'),
-                          onChanged: ((value) {
-                            inputAmount = value;
-                            //print(inputAmount);
-                          }),
+                          controller: amountController,
                         ),
                         ElevatedButton(
                           onPressed: () {
-                            print(inputTitle);
-                            print(inputAmount);
+                            print(titleController.text);
+                            print(amountController.text);
                           },
                           child: Text('Add Transaction',
                               style: TextStyle(color: Colors.purple)),
@@ -114,12 +111,12 @@ class MyHomePage extends StatelessWidget {
                     children: [
                       Text(
                         tx.title,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       Text(
                         DateFormat.yMMMd().format(tx.date),
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.grey),
                       ),
                     ],
