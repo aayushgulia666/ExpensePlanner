@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
+  String inputTitle = "";
+  String inputAmount = "";
+
   final List<Transaction> transactions = [
     Transaction(
         id: 'txn1', title: 'firestick', amount: 210, date: DateTime.now()),
@@ -50,18 +53,32 @@ class MyHomePage extends StatelessWidget {
                   child: Card(
                     elevation: 5,
                     child: Column(
+                      // ignore: sort_child_properties_last
                       children: [
                         TextField(
                           decoration: InputDecoration(labelText: 'Title'),
+                          onChanged: ((value) {
+                            inputTitle = value;
+                            //print(inputTitle);
+                          }),
                         ),
                         TextField(
                           decoration: InputDecoration(labelText: 'Amount'),
+                          onChanged: ((value) {
+                            inputAmount = value;
+                            //print(inputAmount);
+                          }),
                         ),
                         ElevatedButton(
-                          onPressed: () {},
-                          child: Text('Add Transaction'),
+                          onPressed: () {
+                            print(inputTitle);
+                            print(inputAmount);
+                          },
+                          child: Text('Add Transaction',
+                              style: TextStyle(color: Colors.purple)),
                           style:
-                              ElevatedButton.styleFrom(primary: Colors.green),
+                              // ignore: deprecated_member_use
+                              ElevatedButton.styleFrom(primary: Colors.white),
                         )
                       ],
                       crossAxisAlignment: CrossAxisAlignment.end,
