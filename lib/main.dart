@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:real_app/transaction.dart';
+import 'package:real_app/Models/transaction.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,9 +16,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
-
-  // String inputTitle = "";
-  // String inputAmount = "";
 
   final titleController = TextEditingController();
   final amountController = TextEditingController();
